@@ -1,0 +1,206 @@
+﻿@{
+    ViewBag.Title = "Liên Hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .contact-container {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info, .contact-form {
+        flex: 1;
+        min-width: 300px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+        .contact-info h2, .contact-form h2 {
+            color: #c06c84;
+            border-bottom: 3px solid #ff6b9d;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+    .info-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+
+        .info-item .icon {
+            font-size: 30px;
+            margin-right: 15px;
+            color: #ff6b9d;
+        }
+
+        .info-item .details h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .info-item .details p {
+            margin: 0;
+            color: #666;
+        }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+    .submit-btn {
+        background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+    .map-section {
+        margin-top: 30px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+        .map-section h2 {
+            color: #c06c84;
+            border-bottom: 3px solid #ff6b9d;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+    .map-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
+</style>
+
+<div class="contact-container">
+    <div class="contact-info">
+        <h2>📞 Thông Tin Liên Hệ</h2>
+
+        <div class="info-item">
+            <div class="icon">📍</div>
+            <div class="details">
+                <h4>Địa chỉ</h4>
+                <p>123 Đường Nguyễn Văn Linh<br>Quận 7, TP. Hồ Chí Minh</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">📱</div>
+            <div class="details">
+                <h4>Số điện thoại</h4>
+                <p>Hotline: 1900 xxxx<br>Mobile: 0909 xxx xxx</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">✉️</div>
+            <div class="details">
+                <h4>Email</h4>
+                <p>info@hoatuoixinh.vn<br>support@hoatuoixinh.vn</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <div class="icon">🕐</div>
+            <div class="details">
+                <h4>Giờ làm việc</h4>
+                <p>Thứ 2 - Thứ 7: 8:00 - 20:00<br>Chủ nhật: 8:00 - 18:00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>💌 Gửi Tin Nhắn Cho Chúng Tôi</h2>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Họ và tên *</label>
+                <input type="text" id="name" name="name" required placeholder="Nhập họ và tên của bạn">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="Nhập email của bạn">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn">
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Tiêu đề *</label>
+                <input type="text" id="subject" name="subject" required placeholder="Nhập tiêu đề tin nhắn">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Nội dung *</label>
+                <textarea id="message" name="message" required placeholder="Nhập nội dung tin nhắn của bạn..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
+        </form>
+    </div>
+</div>
+
+<div class="map-section">
+    <h2>🗺️ Vị Trí Cửa Hàng</h2>
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9544943583895!2d106.69530731428681!3d10.733720762766826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752fba5cdbc0cf%3A0x73582d2be51b2c5!2zTmd1eeG7hW4gVsSDbiBMaW5oLCBRdeG6rW4gNywgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1234567890"
+                allowfullscreen=""
+                loading="lazy"></iframe>
+    </div>
+</div>
