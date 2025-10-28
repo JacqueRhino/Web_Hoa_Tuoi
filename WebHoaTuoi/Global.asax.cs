@@ -4,16 +4,14 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Data.Entity;
 using WebHoaTuoi.Models;
-using WebHoaTuoi.DAL;
 
 namespace WebHoaTuoi
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
-            // Thiết lập Database Initializer
-            Database.SetInitializer<HoaTuoiDbContext>(new HoaTuoiInitializer());
+            Database.SetInitializer(new HoaTuoiDbInitializer());
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
