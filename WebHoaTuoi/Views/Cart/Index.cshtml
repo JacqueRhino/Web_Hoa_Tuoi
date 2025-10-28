@@ -1,0 +1,49 @@
+@model List<WebHoaTuoi.Models.CartItem>
+@{
+    ViewBag.Title = "Giỏ hàng";
+}
+
+<h2>Giỏ hàng</h2>
+
+@if (!Model.Any())
+{
+    <p>Giỏ hàng của bạn đang trống.</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Hình</th>
+                <th>Tên sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><img src="@Url.Content("~/Images/" + item.Hinh)" width="80" /></td>
+                    <td>@item.TenSP</td>
+                    <td>@item.DonGia.ToString("N0") ₫</td>
+                    <td>
+                        <form action="@Url.Action("Update", "Cart")" method="post" class="form-inline">
+                            <input type="hidden" name="id" value="@item.MaSP" />
+                            <input type="number" name="quantity" value="@item.SoLuong" min="1" style="width:70px" />
+                            <button type="submit" class="btn btn-sm btn-primary">Cập nhật</button>
+                        </form>
+                    </td>
+                    <td>@item.ThanhTien.ToString("N0") ₫</td>
+                    <td><a href="@Url.Action("Remove", "Cart", new { id = item.MaSP })" class="btn btn-sm btn-danger">Xóa</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4 class="text-end">Tổng cộng: <strong>@ViewBag.Total.ToString("N0") ₫</strong></h4>
+
+    <a href="@Url.Action("Checkout", "Cart")" class="btn btn-success">Thanh toán</a>
+}
