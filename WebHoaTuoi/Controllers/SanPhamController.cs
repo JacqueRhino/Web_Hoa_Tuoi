@@ -12,7 +12,6 @@ namespace WebHoaTuoi.Controllers
     {
         private HoaTuoiDbContext db = new HoaTuoiDbContext();
 
-        // GET: SanPham
         public ActionResult Index()
         {
             // Lấy danh sách sản phẩm kèm thông tin loại sản phẩm
@@ -20,7 +19,6 @@ namespace WebHoaTuoi.Controllers
             return View(sanPhams);
         }
 
-        // GET: SanPham/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
