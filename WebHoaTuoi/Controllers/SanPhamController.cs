@@ -21,7 +21,7 @@ namespace WebHoaTuoi.Controllers
         }
 
         // GET: SanPham/Details/5
-        public ActionResult Details(string id)
+        public ActionResult ChiTietSanPham(string id)
         {
             if (id == null)
             {

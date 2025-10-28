@@ -222,7 +222,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\hoa-cuoi.jpg" />
     <Content Include="Images\hoa-hong-do.jpg" />
+    <Content Include="Images\hoa-hong-hong.jpg" />
+    <Content Include="Images\hoa-ly-trang.jpg" />
+    <Content Include="Images\huong-duong.jpg" />
+    <Content Include="Images\tulip-ha-lan.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -278,6 +283,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_myLayout.cshtml" />
     <Content Include="Views\SanPham\Index.cshtml" />
+    <None Include="Views\SanPham\ChiTietSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
